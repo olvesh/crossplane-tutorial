@@ -19,7 +19,7 @@ spec:
       kind: VPC
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           cidrBlock: 11.0.0.0/16
           enableDnsSupport: true
           enableDnsHostnames: true
@@ -29,11 +29,11 @@ spec:
       kind: Subnet
       metadata:
         labels:
-          zone: us-east-1a
+          zone: eu-north-1a
       spec:
         forProvider:
-          region: us-east-1
-          availabilityZone: us-east-1a
+          region: eu-north-1
+          availabilityZone: eu-north-1a
           cidrBlock: 11.0.0.0/24
           vpcIdSelector:
             matchLabels:
@@ -44,11 +44,11 @@ spec:
       kind: Subnet
       metadata:
         labels:
-          zone: us-east-1b
+          zone: eu-north-1b
       spec:
         forProvider:
-          region: us-east-1
-          availabilityZone: us-east-1b
+          region: eu-north-1
+          availabilityZone: eu-north-1b
           cidrBlock: 11.0.1.0/24
           vpcIdSelector:
             matchLabels:
@@ -59,11 +59,11 @@ spec:
       kind: Subnet
       metadata:
         labels:
-          zone: us-east-1c
+          zone: eu-north-1c
       spec:
         forProvider:
-          region: us-east-1
-          availabilityZone: us-east-1c
+          region: eu-north-1
+          availabilityZone: eu-north-1c
           cidrBlock: 11.0.2.0/24
           vpcIdSelector:
             matchLabels:
@@ -74,7 +74,7 @@ spec:
       kind: SubnetGroup
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           description: I'm too lazy to write a good description
           subnetIdSelector:
             matchLabels:
@@ -85,7 +85,7 @@ spec:
       kind: InternetGateway
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           vpcIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -95,7 +95,7 @@ spec:
       kind: RouteTable
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           vpcIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -105,7 +105,7 @@ spec:
       kind: Route
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           routeTableIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -119,7 +119,7 @@ spec:
       kind: MainRouteTableAssociation
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           routeTableIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -132,7 +132,7 @@ spec:
       kind: RouteTableAssociation
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           routeTableIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -145,7 +145,7 @@ spec:
       kind: RouteTableAssociation
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           routeTableIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -158,7 +158,7 @@ spec:
       kind: RouteTableAssociation
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           routeTableIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -172,7 +172,7 @@ spec:
       spec:
         forProvider:
           description: I am too lazy to write descriptions
-          region: us-east-1
+          region: eu-north-1
           vpcIdSelector:
             matchLabels:
               crossplane.io/composite: my-db
@@ -183,7 +183,7 @@ spec:
       spec:
         forProvider:
           description: I am too lazy to write descriptions
-          region: us-east-1
+          region: eu-north-1
           type: ingress
           fromPort: 5432
           toPort: 5432
@@ -199,7 +199,7 @@ spec:
       kind: Instance
       spec:
         forProvider:
-          region: us-east-1
+          region: eu-north-1
           dbSubnetGroupNameSelector:
             matchLabels:
               crossplane.io/composite: my-db
